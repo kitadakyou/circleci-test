@@ -17,4 +17,4 @@ jobs:
           command: |
             /usr/local/bin/python -m xmlrunner discover -s ./tests --output-file result.xml
       - store_test_results:
-          path: result.xmlunittest-xml-reporting
+          path: result.xml
