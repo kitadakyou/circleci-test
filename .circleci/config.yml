@@ -6,8 +6,13 @@ jobs:
       - image: circleci/python:3.7.3
     steps:
       - checkout
-      - setup_remote_docker:
-            docker_layer_caching: true
+      - run:
+          command: |
+            sudo chown -R circleci:circleci /usr/local/bin
+            sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
+            pip install unittest-xml-reporting==2.5.1
       - run:
           command: |
             /usr/local/bin/python -m unittest discover -s tests/
+      - store_test_results:
+          path: result.xmlunittest-xml-reporting
