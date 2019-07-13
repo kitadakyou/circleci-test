@@ -8,4 +8,4 @@ jobs:
       - checkout
       - run:
           command: |
-            pythnon -m unittest discover -s tests/
+            pythnon3 -m unittest discover -s tests/
