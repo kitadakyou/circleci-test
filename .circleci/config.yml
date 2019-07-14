@@ -13,8 +13,8 @@ jobs:
             pip install coverage==5.0a5
       - run:
           command: |
-            coverage run -m unittest discover -s ./tests
-            coverage report --omit=*/tests/*,*/venv/*
+            coverage run
+            coverage report
             coverage html
       - store_artifacts:
           path: htmlcov
